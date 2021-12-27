@@ -40,3 +40,77 @@
 #brand{
 	color: white;
 }
+.center-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.center-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-icon{
+  margin:5px;
+  width:25px;
+  height:25px;
+}
+
+#unit-many-many-pictures-of-small-cats {
+  width: 408px;
+  float: right;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+
+#unit-many-many-pictures-of-small-cats img {
+  margin-bottom: 8px;
+}
+
+#image-1 {
+  margin-right: 8px;
+}
+#image-1, #image-2, #image-3 {
+  float: left;
+}
+#image-4, #image-5, #image-6, #image-7 {
+  float: right;
+}
+#image-4 {
+  margin-left: 8px;
+}
+#image-5 {
+  margin-left: 8px;
+}
+#unit-kitten-content {
+  width: 400px;
+  padding-right: 8px;
+  height: 582px;
+  float: left;
+  position: relative;
+}
+#image-0 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.primary-image{
+  display: flex;
+  justify-content: center;
+}
+#container {
+  width: 824px;
+  margin: 40px auto;
+}
+.large-one{
+  color: black;
+}
+.large-two{
+  color: grey;
+}
+.medium-one{
+  color: blue;
+}
+.medium-two{
+  color: blueviolet;
+}
