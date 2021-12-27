@@ -53,14 +53,14 @@ class App extends React.Component {
 						<div className='col-md-4'><h1>large 0006 Enywhere, Whatever, EnyTime, we are ready for you.</h1></div>
 					</div>
 					<div className='row medium-one'>
-						<div className='col-md-4'><h3>medium Famous Places001 of Thailand</h3></div>
-						<div className='col-md-4'><h3>medium Famous Places002 of Thailand</h3></div>
-						<div className='col-md-4'><h3>medium Famous Places003 of Thailand</h3></div>
+						<div className='col-md-4'><h3>medium breakpoint001</h3></div>
+						<div className='col-md-4'><h3>medium breakpoint002</h3></div>
+						<div className='col-md-4'><h3>medium breakpoint003</h3></div>
 					</div>
 					<div className="medium-two">
-						<div><h3>medium breakpoint001 Famous Places of Thailand</h3></div>
-						<div><h3>medium breakpoint002 Famous Places of Thailand</h3></div>
-						<div><h3>medium breakpoint003 Famous Places of Thailand</h3></div>
+						<div><h3>medium breakpoint004 Please visit World</h3></div>
+						<div><h3>medium breakpoint005 Please visit World</h3></div>
+						<div><h3>medium breakpoint006 Please visit World</h3></div>
 					</div>
 					
 					<NameForm/>
@@ -80,7 +80,7 @@ class App extends React.Component {
 								<img id="image-0" src={image008} alt=""/>
 							</div>
 							<div id="unit-many-many-pictures-of-small-cats" className="unit">
-								<img id="image-1"  src={image002} alt=""/>
+								<img id="image-1" src={image002} alt=""/>
 								<img id="image-2" src={image003} alt=""/>
 								<img id="image-3" src={image001} alt=""/>
 								<img id="image-4" src={image007} alt=""/>

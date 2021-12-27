@@ -17,7 +17,7 @@ class Menu extends React.Component {
 						<div className='col-md-3 center-center'>
 							<img id="image-1"  src={image002} alt=""/>	
 						</div>
-						<div body className="pl-3 col-md-9 pt-1 pb-1">
+						<div body className="pl-3 col-md-9 pt-1 pb-1 text-card">
 							<Media heading><strong>{place.name}</strong></Media>
 							<div><strong>Location Type - </strong>{place.category}</div>
 							<div><strong>Info - </strong>{place.description}</div>
