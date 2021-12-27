@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Menu from './components/menu';
 import NameForm from './components/name_form';
 import { PLACES } from './shared/places';
-import Greet from './components/greet';
 import { RiShoppingBasket2Line } from "react-icons/ri";
 import { IoLogoGameControllerB } from "react-icons/io";
 import { BsDice3,BsGithub } from "react-icons/bs";
