@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import { Navbar, NavbarBrand } from 'reactstrap';
-import Menu from './components/menu';
 import NameForm from './components/name_form';
-import { PLACES } from './shared/places';
 import { RiShoppingBasket2Line } from "react-icons/ri";
 import { IoLogoGameControllerB } from "react-icons/io";
 import { BsDice3,BsGithub } from "react-icons/bs";
+import axios from 'axios';
+
 import image001 from "./assets/001.jfif";
 import image002 from "./assets/002.jfif";
 import image003 from "./assets/003.jfif";
@@ -22,11 +22,88 @@ class App extends React.Component {
 		super(props);
 		
 		this.state = {
-			places: PLACES
+			placeOne:[],
+			placeTwo:[]
 		};
+	}
+
+	callAPIOne() {
+		axios.get(`https://3000-amber-hedgehog-usxt1b8q.ws-us25.gitpod.io/place/one`)
+		.then(res => {
+		  const places = res.data;
+		  this.setState({
+			placeOne:places.data
+		  })
+		})
+	}
+	callAPITwo() {
+		axios.get(`https://3000-amber-hedgehog-usxt1b8q.ws-us25.gitpod.io/place/two`)
+		.then(res => {
+		  const places = res.data;
+		  this.setState({
+			placeTwo:places.data
+		  })
+		})
+	}
+
+	componentWillMount() {
+		this.callAPIOne();
+		this.callAPITwo();
 	}
 	
 	render(){
+		let {placeOne,placeTwo} = this.state
+		const largeOne = placeOne.map((place)=>{
+			return(
+				<div key={place.id} className='col-md-4'>
+					<div className='box_0'>
+						<h3>{place.name}</h3>
+						<img src={place.image} alt="image" height="150" />
+						<h6>{place.description}</h6>
+					</div>
+				</div>
+			);
+		})
+		const largeTwo = placeTwo.map((place)=>{
+			return(
+				<div key={place.id} className='col-md-4'>
+					<div className='box_0'>
+						<h3>{place.name}</h3>
+						<img src={place.image} alt="image" height="150" />
+						<h6>{place.description}</h6>
+					</div>
+				</div>
+				)
+			})
+		const middleOne = placeOne.map((place)=>{
+			return(
+				<div className='col-md-4'>
+					<div className='box_1'>
+						<h4>{place.name}</h4>
+						<img src={place.image} alt="image" height="150" />
+					</div>
+				</div>
+				)
+			})
+
+		const middleTwo = placeTwo.map((place)=>{
+			return (
+				<div className='row large-one box_2'>
+					<div className='col-md-4'><img src={place.image} alt="image" height="110" /></div>
+					<div className='col-md-8'><h4 className='pl-5'>{place.name}</h4></div>
+				</div>
+			)
+		})
+
+		const smallOne = placeOne.map((place)=>{
+			return (
+				<div className='row large-one box_2'>
+					<div className="hover_img">
+						<a>{place.name}<span><img src={place.image} alt="image" height="100" /></span></a>
+					</div>
+				</div>
+			)
+		})
 		return (
 			<div className='App'>
 
@@ -41,30 +118,34 @@ class App extends React.Component {
 						</div>
 					</div>
 				</Navbar>
+				
 				<div className='container'>
-					<div className='row large-one'>
-						<div className='col-md-4'><h1>large 0001</h1></div>
-						<div className='col-md-4'><h1>large 0002</h1></div>
-						<div className='col-md-4'><h1>large 0003</h1></div>
-					</div>
-					<div className='row large-two'>
-						<div className='col-md-4'><h1>large 0004 We are waiting your visit</h1></div>
-						<div className='col-md-4'><h1>large 0005 Welcome to your visit, We can help you to get pleasure</h1></div>
-						<div className='col-md-4'><h1>large 0006 Enywhere, Whatever, EnyTime, we are ready for you.</h1></div>
-					</div>
-					<div className='row medium-one'>
-						<div className='col-md-4'><h3>medium breakpoint001</h3></div>
-						<div className='col-md-4'><h3>medium breakpoint002</h3></div>
-						<div className='col-md-4'><h3>medium breakpoint003</h3></div>
-					</div>
-					<div className="medium-two">
-						<div><h3>medium breakpoint004 Please visit World</h3></div>
-						<div><h3>medium breakpoint005 Please visit World</h3></div>
-						<div><h3>medium breakpoint006 Please visit World</h3></div>
-					</div>
 					
+					<div className='row large-one'>
+						{largeOne}
+					</div>
+
+					<hr className="dashed"/>
+					<div className='row large-one'>
+						{largeTwo}
+					</div>
+					<hr className="dotted"/>
+					<div className='row large-one'>
+						{middleOne}
+					</div>
+
+					<hr className="solid"/>
+					{middleTwo}
+
+					<hr className="dotted"/>
+					
+					{smallOne}
+
+					<hr className="rounded"/>
+
 					<NameForm/>
-					<Menu places={this.state.places} />
+
+					<hr className="solid"/>
 
 					<div id="container">
 						<div id="primary-content" role="main">
