@@ -166,7 +166,7 @@ hr.rounded {
   border: 1px solid grey;
   border-radius: 6px;
   padding: 10px;
-  height: 410px;
+  height: 430px;
   overflow: auto;
   margin-top: 5px;
 }
@@ -204,4 +204,26 @@ ul li {
 
 .highlight {
   color: greenyellow;
+}
+
+#my_list li {
+  /* ... */
+  transition: background-color 1000ms linear;
+}
+#my_list li:hover {
+  background-color: red;
+}
+.big #my_list li {
+  padding: 2em;
+  font-size: larger;
+}
+.big li {
+  padding: 2em;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
