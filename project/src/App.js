@@ -97,11 +97,13 @@ class App extends React.Component {
 
 		const smallOne = placeOne.map((place)=>{
 			return (
-				<div className='row large-one box_2'>
-					<div className="hover_img">
-						<a>{place.name}<span><img src={place.image} alt="image" height="100" /></span></a>
+				<li>
+					<div className='row large-one box_2'>
+						<div className="hover_img">
+							<a>{place.name}<span><img src={place.image} alt="image" height="100" /></span></a>
+						</div>
 					</div>
-				</div>
+				</li>
 			)
 		})
 		return (
@@ -118,6 +120,8 @@ class App extends React.Component {
 						</div>
 					</div>
 				</Navbar>
+
+
 				
 				<div className='container'>
 					
@@ -138,8 +142,18 @@ class App extends React.Component {
 					{middleTwo}
 
 					<hr className="dotted"/>
+
+					<div>
+						<h3>Small BreakPack</h3>
+						<ul>
+							<li>{smallOne}</li>
+						</ul>
+						<ul>
+							{smallOne}
+						</ul>
+					</div>
 					
-					{smallOne}
+					
 
 					<hr className="rounded"/>
 

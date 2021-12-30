@@ -185,3 +185,23 @@ hr.rounded {
   padding: 5px;
   margin-top: 5px;
 }
+h1 {
+  color: red;
+  font-size: 3em;
+}
+
+ul li {
+  list-style-type: square;
+}
+
+#my_list li {
+  display: inline-block;
+  border-radius: 1em;
+  background-color: lightgray;
+  padding: 1em;
+  margin: 1em;
+}
+
+.highlight {
+  color: greenyellow;
+}

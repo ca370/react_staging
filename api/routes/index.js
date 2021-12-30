@@ -54,15 +54,15 @@ const PLACESTWO =
 			}
 	];
 
-/* GET home page. */
+
 router.get('/one', function(req, res, next) {
   res.json({data:PLACES});
-  // res.render('index', { title: 'Express' });
+
 });
 
 router.get('/two', function(req, res, next) {
 	res.json({data:PLACESTWO});
-	// res.render('index', { title: 'Express' });
+
   });
 
 module.exports = router;
