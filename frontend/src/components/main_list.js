@@ -26,7 +26,7 @@ class App extends React.Component {
 	}
 
 	callAPIOne() {
-		axios.get(`https://3000-amber-hedgehog-usxt1b8q.ws-us25.gitpod.io/items`)
+		axios.get(`https://3000-azure-puffin-4gb5l86h.ws-us25.gitpod.io/items`)
 			.then(res => {
 				const places = res.data;
 				this.setState({
@@ -52,7 +52,7 @@ class App extends React.Component {
 			image:image,
 			description:description,
 			keyword:keyword };
-			axios.post('https://3000-amber-hedgehog-usxt1b8q.ws-us25.gitpod.io/item/', article, {
+			axios.post('https://3000-azure-puffin-4gb5l86h.ws-us25.gitpod.io/item/', article, {
 				headers: headers
 			  })
 			.then((response)=>{
@@ -87,7 +87,7 @@ class App extends React.Component {
 			return (
 				<div key={place.id}>
                     <img src={place.image}></img>
-                    <div><Link to={"/?id="+place.id}>Detail</Link></div>
+                    <div><Link to={"/detail?id="+place.id}>Detail</Link></div>
                     <div>
                         username:{place.user_id}
                     </div>

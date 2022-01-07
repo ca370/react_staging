@@ -5,35 +5,17 @@ import {
   Route,
   NavLink
 } from 'react-router-dom';
-import Contact from './components/somepage';
+import MainList from './components/main_list';
 import Home from './components/detail';
 import './App.css';
 function App() {
   return (
     <div className="App">
       <Router>
-        {/* <nav>
-          <ul>
-            <li>
-              <NavLink 
-                exact to="/" 
-                activeClassName="selected">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink 
-                to="/contact" 
-                activeClassName="selected">
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-        </nav> */}
         <Routes>
-          <Route path="/contact" element={<Contact/>}>
+          <Route path="/" element={<MainList/>}>
           </Route>
-          <Route path="/" element={<Home/>}>
+          <Route path="/detail" element={<Home/>}>
           </Route>
         </Routes>
       </Router>
