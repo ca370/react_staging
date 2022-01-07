@@ -1,4 +1,4 @@
- tasks:
+tasks:
   - init: |
       echo 'TODO: build project'
     command: |
